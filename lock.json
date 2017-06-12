@@ -1,0 +1,21 @@
+{
+    "memo": "3c2032d89f309c6f926c347f614e35a2aef9e69cc84a0a1047460dda6f89a905",
+    "projects": [
+        {
+            "name": "github.com/joho/godotenv",
+            "branch": "master",
+            "revision": "4ed13390c0acd2ff4e371e64d8b97c8954138243",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "golang.org/x/net",
+            "branch": "master",
+            "revision": "e4fa1c5465ad6111f206fc92186b8c83d64adbe1",
+            "packages": [
+                "websocket"
+            ]
+        }
+    ]
+}
