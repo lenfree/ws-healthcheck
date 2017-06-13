@@ -1,0 +1,13 @@
+language: go
+go:
+- '1.8'
+deploy:
+  provider: releases
+  api_key:
+    secure: IO1b2yeJzP00+rYVNG3VSsxdGmR14SNITxPzWLKQt3dI2oGlCrKySEn6wy7wh1pDyDVpgWVCMH8CdrPQVIa2K3qpoERekM5HkwThDuBYGWu5elzTZgZDhx71A/eoGIV9ty/B9CHrqGY+gtkurLxXk52Qjp4LjvL7s44W3huR6GGGwbSQTxFhk3YHg2Cpu7G2Wgus2RvcrXJtN2VEReOI3rIR+SyxArQTcttUr9rPLwRHbrVmsbgVuN08Rbgk9zpb5r87IetIR/1qfARqhO8A/5DdoQa2RIOEcZqGoOApBLUPjDbhrEQZ4OfZOyV9FHw9QHspOsowtOnyqHXVTYqUYexKXpuSRk2t/ok/OWC9IjVUz76izvTtXE7Un6iHVA2VrjPKxkU7IbTvvg9KJ8dHBSZeLvSV8DsmyHBeSnDWeX2j1FDh89tQjriZn6WEBqiSOFnEY8RkdNu9yfUgjY21b4pv7Ze/DsZhi1K+fzK6ALHs6WFLm73dFT9YzQJ9JkGMbyPloYz4W7rojP7M5xrYmDohtFcZ+p/TeyHMG8WeSsRMrICplTF4y7uzCTz+1+EnDFozjgAL/1J5vgZOSMbxufHvNrH04KKcyp1W3RY84uIZEp6aGxwryz5NJgR5tIzwTDRuUhtFPx598Ed/ImNKNqiMOmvnuk/Y3zSOp9r3B2U=
+  file:
+    - release/ws-healthcheck-linux-amd64
+    - release/ws-healthcheck-darwin-amd64
+  skip_cleanup: true
+  on:
+    repo: lenfree/ws-healthcheck
