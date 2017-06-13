@@ -11,9 +11,11 @@ import (
 // Thanks to https://gowalker.org/golang.org/x/net/websocket#_ex_btn_Dial
 func main() {
 	host := os.Getenv("HOST")
-	origin := os.Getenv("ORIGIN")
+
+	origin := "http://" + os.Getenv("ORIGIN")
 	url := "ws://" + host + ":" + os.Getenv("PORT") + "/ws/ping"
-	fmt.Printf("url: %s", origin)
+
+	fmt.Printf("url: %s", url)
 	ws, err := websocket.Dial(url, "", origin)
 	if err != nil {
 		log.Fatal(err)
