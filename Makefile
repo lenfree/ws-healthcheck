@@ -11,7 +11,6 @@ release: install
 
 .PHONY: install
 install:
-	go get -v
 	go fmt ./...
 	go vet ./...
 	go build
