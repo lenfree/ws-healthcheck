@@ -5,20 +5,15 @@ import (
 	"log"
 	"os"
 
-	"github.com/joho/godotenv"
-
 	"golang.org/x/net/websocket"
 )
 
 // Thanks to https://gowalker.org/golang.org/x/net/websocket#_ex_btn_Dial
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
-	url := os.Getenv("URL")
-	origin := "ws://" + os.Getenv("ORIGIN") + ":" + os.Getenv("PORT") + "/ws/ping"
+	host := os.Getenv("HOST")
+	origin := os.Getenv("ORIGIN")
+	url := "ws://" + host + ":" + os.Getenv("PORT") + "/ws/ping"
+	fmt.Printf("url: %s", origin)
 	ws, err := websocket.Dial(url, "", origin)
 	if err != nil {
 		log.Fatal(err)
