@@ -26,12 +26,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	fmt.Println("send request")
 	msg := message{Action: "ping"}
 	fmt.Println("writing to ws")
+	fmt.Printf("msg: %+#v\n", msg)
 	if err := websocket.JSON.Send(ws, msg); err != nil {
 		log.Fatal(err)
 	}
 
+	fmt.Println("read response")
 	data := message{}
 	websocket.JSON.Receive(ws, &data)
 	fmt.Printf("received: %#v\n", data)
