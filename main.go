@@ -18,7 +18,7 @@ func main() {
 
 	//origin := "http://" + os.Getenv("ORIGIN")
 	origin := "http://localhost/"
-	url := "ws://" + host + ":" + os.Getenv("PORT") + "/ws/ping"
+	url := "ws://" + host + ":" + os.Getenv("PORT") + "/ws"
 
 	fmt.Printf("url: %s\n", url)
 	ws, err := websocket.Dial(url, "", origin)
