@@ -31,10 +31,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	var res []byte
+	var res = make([]byte, 4096)
 	var n int
 	if n, err = ws.Read(res); err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println("length: ", len(res))
 	fmt.Printf("Received: %+#v\n", msg[:n])
+	fmt.Println("Print data: ", msg)
 }
