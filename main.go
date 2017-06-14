@@ -12,6 +12,16 @@ type message struct {
 	Action string
 }
 
+type resTime struct {
+	Time string
+}
+
+type response struct {
+	Action string
+	Req    message
+	Res    resTime
+}
+
 // Thanks to https://gowalker.org/golang.org/x/net/websocket#_ex_btn_Dial
 func main() {
 	host := os.Getenv("HOST")
@@ -27,7 +37,7 @@ func main() {
 	}
 
 	fmt.Println("send request")
-	msg := message{Action: "ping"}
+	msg := message{Action: "PING"}
 	fmt.Println("writing to ws")
 	fmt.Printf("msg: %+#v\n", msg)
 	if err := websocket.JSON.Send(ws, msg); err != nil {
@@ -35,7 +45,7 @@ func main() {
 	}
 
 	fmt.Println("read response")
-	data := message{}
+	var data interface{}
 	websocket.JSON.Receive(ws, &data)
 	fmt.Printf("received: %#v\n", data)
 }
