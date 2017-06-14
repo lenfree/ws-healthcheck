@@ -22,11 +22,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println("send request")
-	msg := "{'action': 'ping'}"
-	fmt.Println("writing to ws")
-	fmt.Printf("msg: %+#v\n", msg)
-	_, err = ws.Write([]byte("{\"action\": \"PING\"}"))
+	msg := []byte("{\"action\": \"PING\"}")
+	_, err = ws.Write(msg)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -36,7 +33,5 @@ func main() {
 	if n, err = ws.Read(res); err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("length: ", len(res))
-	fmt.Println("Print data: ", msg)
 	fmt.Println(string(res[:n]))
 }
