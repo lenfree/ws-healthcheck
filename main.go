@@ -37,6 +37,6 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println("length: ", len(res))
-	fmt.Printf("Received: %+#v\n", msg[:n])
 	fmt.Println("Print data: ", msg)
+	fmt.Println(string(res[:n]))
 }
