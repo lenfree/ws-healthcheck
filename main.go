@@ -26,10 +26,15 @@ func main() {
 	msg := "{'action': 'ping'}"
 	fmt.Println("writing to ws")
 	fmt.Printf("msg: %+#v\n", msg)
-	res, err := ws.Write([]byte("{'action': 'ping'}"))
+	_, err = ws.Write([]byte("{'action': 'ping'}"))
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("response: %+#v\n", res)
+	var res = make([]byte, 512)
+	var n int
+	if n, err = ws.Read(res); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Received: %s.\n", msg[:n])
 }
