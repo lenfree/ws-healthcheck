@@ -26,7 +26,7 @@ func main() {
 	msg := "{'action': 'ping'}"
 	fmt.Println("writing to ws")
 	fmt.Printf("msg: %+#v\n", msg)
-	_, err = ws.Write([]byte("{'action': 'ping'}"))
+	_, err = ws.Write([]byte("{\"action\": \"ping\"}"))
 	if err != nil {
 		log.Fatal(err)
 	}
