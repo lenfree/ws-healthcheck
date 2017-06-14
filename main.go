@@ -9,7 +9,7 @@ import (
 )
 
 type message struct {
-	Action string
+	action string
 }
 
 type resTime struct {
@@ -37,7 +37,7 @@ func main() {
 	}
 
 	fmt.Println("send request")
-	msg := message{Action: "PING"}
+	msg := message{action: "PING"}
 	fmt.Println("writing to ws")
 	fmt.Printf("msg: %+#v\n", msg)
 	if err := websocket.JSON.Send(ws, msg); err != nil {
