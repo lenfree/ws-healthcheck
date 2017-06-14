@@ -31,7 +31,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	var res = make([]byte, 512)
+	var res []byte
 	var n int
 	if n, err = ws.Read(res); err != nil {
 		log.Fatal(err)
