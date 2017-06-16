@@ -27,18 +27,21 @@ func main() {
 	ws, err := websocket.Dial(url, "", origin)
 	if err != nil {
 		log.Fatalf("Connect to websocket error %s\n", err)
+		os.Exit(2)
 	}
 
 	msg := []byte("{\"action\": \"PING\"}")
 	_, err = ws.Write(msg)
 	if err != nil {
 		log.Fatalf("Writing to websocket error %s\n", err)
+		os.Exit(2)
 	}
 
 	var res = make([]byte, 4096)
 	var n int
 	if n, err = ws.Read(res); err != nil {
 		log.Fatalf("Reading from websocket error %s\n", err)
+		os.Exit(2)
 	}
 
 	data := "\"action\":\"PONG\""
