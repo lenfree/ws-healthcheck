@@ -12,4 +12,4 @@ deploy:
     - release/ws-healthcheck-darwin-amd64
   skip_cleanup: true
   on:
-    repo: lenfree/ws-healthcheck
+    repo: packetloop/ws-healthcheck

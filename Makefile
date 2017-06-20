@@ -1,5 +1,5 @@
 PROJECT_NAME := ws-healthcheck
-package = github.com/lenfree/$(PROJECT_NAME)
+package = github.com/packetloop/$(PROJECT_NAME)
 
 all: release
 
