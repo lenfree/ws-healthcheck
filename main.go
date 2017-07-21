@@ -25,6 +25,8 @@ func main() {
 	url := "ws://" + host + ":" + os.Getenv("PORT") + "/ws"
 
 	ws, err := websocket.Dial(url, "", origin)
+	defer ws.Close()
+
 	if err != nil {
 		log.Fatalf("Connect to websocket error %s\n", err)
 		os.Exit(2)
